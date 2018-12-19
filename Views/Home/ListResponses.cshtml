@@ -1,0 +1,39 @@
+@model IEnumerable<PierwszaAplikacjaMVC.Models.GuestResponse>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <title>Lista gości</title>
+    </head>
+
+    <body>
+        <div class="m-1 p-1">
+            <h2>Lista gości:</h2>
+            <table class="table table-sm table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Imie i nazwisko</th>
+                        <th>Email</th>
+                        <th>Numer telefonu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var guest in Model)
+                    {
+                        <tr>
+                            <td>@guest.Name</td>
+                            <td>@guest.Email</td>
+                            <td>@guest.PhoneNumber</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

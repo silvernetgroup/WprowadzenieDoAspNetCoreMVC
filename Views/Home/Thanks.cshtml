@@ -1,0 +1,31 @@
+@model PierwszaAplikacjaMVC.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <title>Dziękujemy</title>
+    </head>
+
+    <body class="text-center">
+        <p>
+            <h1>Dziękujemy Ci @Model.Name za wypełnienie formularza!</h1>
+
+            @if (Model.WillAttend == true)
+            {
+                <h3>Super, że z nami będziesz - już nie możemy się doczekać!</h3>
+            }
+            else
+            {
+                <h3>Przykro nam, że Cię zabraknie. Może innym razem!</h3>
+            }
+        </p>
+        <a asp-action="ListResponses">Kliknij, tutaj i zobacz kto będzie na zabawie</a>
+        
+    </body>
+</html>
